@@ -1,0 +1,24 @@
+$purple: #7067c6;
+$black: #1b2024;
+$yellow: #ffeec9;
+$white: #fff;
+$text: #75757c;
+$dark-grey: #56565e;
+$grid-border: #c0c9e4;
+$grid-bg: #fafbfe;
+$footer-bg: #f1f2fb;
+// Background variables
+$background-light: rgb(34, 59, 83);
+$background-dark: $white;
+
+// Color variables
+$type-light: $background-light;
+$type-dark: $background-dark;
+$button-color-primary-light: $black;
+$button-color-secondary-light: #3887be;
+$button-color-tertiary-light: #41afa5;
+$button-color-primary-dark: $background-dark;
+$button-color-secondary-dark: #3887be;
+$button-color-tertiary-dark: #41afa5;
+
+$colors: (default: (base: #231c13, light: #c7c7cd), primary: (base: #fff), info: (base: #5ad864), green: (base: #41afa5), warning:(base: #5ad864), danger:(base:#5ad864), rose:(base:#5ad864));

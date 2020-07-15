@@ -1,0 +1,523 @@
+@import 'colors';
+///////////////////////////////
+// ELEMENT LOGIC             //
+// Element starts on line 53 //
+///////////////////////////////
+
+// Breakpoints:
+$bp-lap: 37.5em; // 600px @ 16px
+
+// Transform variables
+$button-bounce: scale(0.98);
+
+// Transition variables
+$button-transition-duration: 300ms;
+$button-cycle-busy: 2s ease-in-out infinite;
+
+// Border variables
+$button-border-width-thin: 2px;
+$button-border-width-thick: 3px;
+
+// Animation
+@keyframes button-busy {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/////////////////////
+// ELEMENT STYLING //
+/////////////////////
+
+// Declared as a class so we can easily apply it to both `<button>` and `<input type="button">`
+.button {
+
+  /////////////////////
+  // CORE FORMATTING //
+  /////////////////////
+  background-color: transparent;
+  border: 0;
+  color: $white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 1.5rem;
+  transition: background-color $button-transition-duration, border-color $button-transition-duration, box-shadow ($button-transition-duration / 2); // Focused buttons
+  width: 100%; // Large, mobile-friendly touch target
+
+  // States
+  // All states share these core properties
+  &:focus {
+    outline: none; // Make sure every priority has a visually distinct focus style!
+  }
+
+  // Make buttons feel "tappy"
+  &:active {
+    transform: $button-bounce;
+    transition: none;
+  }
+
+  // Disabled styles use the`!important` qualifier because they are a "fixed" trump state that should not be manipulated until the reason for disabling the element has been satisfied: https://csswizardry.com/2016/05/the-importance-of-important/
+  &[aria-busy="true"] {
+    animation: button-busy $button-cycle-busy !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+
+    &:active {
+      transform: none !important;
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed !important;
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+  }
+
+  // Contexts
+  // All contexts share these core properties
+  .background--dark & {
+    color: $type-dark;
+  }
+
+  // Media Queries
+  @media (min-width: $bp-lap) {
+    width: auto; // Smaller buttons on larger screens
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  ////////////////
+  // PRIORITIES //
+  ////////////////
+  // Primary buttons
+  // `#{&}` interpolates the ampersand selector
+  // letting you target multiple classes on the same element:
+  // https://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375 and more
+  &--primary#{&}--solid,
+  &--primary#{&}--hollow {
+
+    // States
+    &:focus {
+      box-shadow:
+        0 0 0 $button-border-width-thick $background-light,
+        0 0 0 ($button-border-width-thin * 2.5) $button-color-primary-light;
+    }
+
+    // Contexts
+    .background--dark & {
+      &:focus {
+        box-shadow:
+          0 0 0 $button-border-width-thick $background-dark,
+          0 0 0 ($button-border-width-thin * 2.5) $button-color-primary-light;
+      }
+    }
+  }
+
+  &--primary#{&}--solid {
+    background-color: $button-color-primary-light;
+
+    // States
+    &:hover {
+      background-color: lighten($button-color-primary-light, 7%);
+    }
+
+    &:active {
+      background-color: darken($button-color-primary-light, 7%);
+    }
+
+    &[disabled] {
+      &:hover {
+        background-color: $button-color-primary-light !important;
+      }
+    }
+  }
+
+  &--primary#{&}--hollow {
+    color: $button-color-primary-light;
+    border: $button-border-width-thick solid $button-color-primary-light;
+
+    // States
+    &:hover {
+      border-color: lighten($button-color-primary-light, 7%);
+      color: lighten($button-color-primary-light, 7%);
+    }
+
+    &:active {
+      border-color: darken($button-color-primary-light, 7%);
+      color: darken($button-color-primary-light, 7%);
+    }
+
+    &[disabled] {
+      &:hover {
+        color: $button-color-primary-light;
+        border: $button-border-width-thick solid $button-color-primary-light;
+      }
+    }
+  }
+
+  // Secondary buttons
+  &--secondary#{&}--solid,
+  &--secondary#{&}--hollow {
+    // States
+    &:focus {
+      box-shadow:
+        0 0 0 $button-border-width-thick $background-light,
+        0 0 0 ($button-border-width-thin * 2.5) $button-color-secondary-light;
+    }
+
+    // Contexts
+    .background--dark & {
+      &:focus {
+        box-shadow:
+          0 0 0 $button-border-width-thick $background-dark,
+          0 0 0 ($button-border-width-thin * 2.5) $button-color-secondary-light;
+      }
+    }
+  }
+
+  &--secondary#{&}--solid {
+    background-color: $button-color-secondary-light;
+
+    // States
+    &:hover {
+      background-color: lighten($button-color-secondary-light, 7%);
+    }
+
+    &:active {
+      background-color: darken($button-color-secondary-light, 7%);
+    }
+
+    &[disabled] {
+      &:hover {
+        background-color: $button-color-secondary-light !important;
+      }
+    }
+
+    // Contexts
+    .background--dark & {
+      background-color: $button-color-secondary-dark;
+
+      // States
+      &:hover {
+        background-color: lighten($button-color-secondary-dark, 7%);
+      }
+
+      &:active {
+        background-color: darken($button-color-secondary-dark, 7%);
+      }
+
+      &[disabled] {
+        &:hover {
+          background-color: $button-color-secondary-light !important;
+          opacity: 0.2 !important;
+        }
+      }
+    }
+  }
+
+  &--secondary#{&}--hollow {
+    color: $button-color-secondary-light;
+    border: $button-border-width-thick solid $button-color-secondary-light;
+
+    // States
+    &:hover {
+      border-color: lighten($button-color-secondary-light, 7%);
+      color: lighten($button-color-secondary-light, 7%);
+    }
+
+    &:active {
+      border-color: darken($button-color-secondary-light, 7%);
+      color: darken($button-color-secondary-light, 7%);
+    }
+
+    &[disabled] {
+      &:hover {
+        color: $button-color-secondary-light;
+        border: $button-border-width-thick solid $button-color-secondary-light;
+      }
+    }
+
+    // Contexts
+    .background--dark & {
+      color: $button-color-secondary-dark;
+      border: $button-border-width-thick solid $button-color-secondary-dark;
+
+      // States
+      &:hover {
+        border-color: lighten($button-color-secondary-light, 14%);
+        color: lighten($button-color-secondary-light, 14%);
+      }
+
+      &:active {
+        border-color: darken($button-color-secondary-light, 14%);
+        color: darken($button-color-secondary-light, 14%);
+      }
+
+      &[disabled] {
+        &:hover {
+          color: $button-color-secondary-dark;
+          border: $button-border-width-thick solid $button-color-secondary-dark;
+        }
+      }
+    }
+  }
+
+  // Tertiary buttons
+  &--tertiary#{&}--solid,
+  &--tertiary#{&}--hollow {
+
+    // States
+    &:focus {
+      box-shadow:
+        0 0 0 $button-border-width-thick $background-light,
+        0 0 0 ($button-border-width-thin * 2.5) $button-color-tertiary-light;
+    }
+
+    // Contexts
+    .background--dark & {
+      &:focus {
+        box-shadow:
+          0 0 0 $button-border-width-thick $background-dark,
+          0 0 0 ($button-border-width-thin * 2.5) $button-color-tertiary-light;
+      }
+    }
+  }
+
+  &--tertiary#{&}--solid {
+    background-color: $button-color-tertiary-light;
+
+    // States
+    &:hover {
+      background-color: lighten($button-color-tertiary-light, 7%);
+    }
+
+    &:active {
+      background-color: darken($button-color-tertiary-light, 7%);
+    }
+
+    &[disabled] {
+      &:hover {
+        background-color: $button-color-tertiary-light !important;
+      }
+    }
+
+    // Contexts
+    .background--dark & {
+      background-color: $button-color-tertiary-dark;
+
+      // States
+      &:hover {
+        background-color: lighten($button-color-tertiary-dark, 7%);
+      }
+
+      &:active {
+        background-color: darken($button-color-tertiary-dark, 7%);
+      }
+
+      &[disabled] {
+        &:hover {
+          background-color: $button-color-tertiary-dark !important;
+        }
+      }
+    }
+  }
+
+  &--tertiary#{&}--hollow {
+    color: $button-color-tertiary-light;
+    border: $button-border-width-thick solid $button-color-tertiary-light;
+
+    // States
+    &:hover {
+      border-color: lighten($button-color-tertiary-light, 7%);
+      color: lighten($button-color-tertiary-light, 7%);
+    }
+
+    &:active {
+      border-color: darken($button-color-tertiary-light, 7%);
+      color: darken($button-color-tertiary-light, 7%);
+      transform: $button-bounce;
+      transition: none;
+    }
+
+    &[disabled] {
+      &:hover {
+        color: $button-color-tertiary-light;
+        border: $button-border-width-thick solid $button-color-tertiary-light;
+      }
+    }
+
+    // Contexts
+    .background--dark & {
+      color: $button-color-tertiary-dark;
+      border: $button-border-width-thick solid $button-color-tertiary-dark;
+
+      // States
+      &:hover {
+        border-color: lighten($button-color-tertiary-light, 21%);
+        color: lighten($button-color-tertiary-light, 21%);
+      }
+
+      &:active {
+        border-color: darken($button-color-tertiary-light, 21%);
+        color: darken($button-color-tertiary-light, 21%);
+      }
+
+      &[disabled] {
+        &:hover {
+          color: $button-color-tertiary-dark;
+          border: $button-border-width-thick solid $button-color-tertiary-dark;
+        }
+      }
+    }
+  }
+
+  ///////////
+  // SIZES //
+  ///////////
+  &--small {
+    min-width: 6rem;
+    border-radius: 0.5rem;
+    font-size: 0.8em;
+    min-height: 2rem;
+  }
+
+  &--small#{&}--hollow {
+    border-width: $button-border-width-thin;
+
+    // Contexts
+    .background--dark & {
+      border-width: $button-border-width-thin;
+    }
+  }
+
+  &--small#{&}--icon {
+    [class^="icon-"] {
+      height: 0.8rem;
+      margin-right: 0.2rem;
+      position: relative;
+      top: 0.125rem;
+      width: 0.8rem;
+    }
+  }
+
+  &--medium {
+    min-width: 8rem;
+    border-radius: 0.75rem;
+    min-height: 2.5rem;
+  }
+
+  &--medium#{&}--icon {
+    [class^="icon-"] {
+      height: 1rem;
+      margin-right: 0.3rem;
+      position: relative;
+      top: 0.125rem;
+      width: 1rem;
+    }
+  }
+
+  &--large {
+    min-width: 10rem;
+    border-radius: 0.75rem;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    min-height: 3rem;
+  }
+
+  &--large#{&}--icon {
+    [class^="icon-"] {
+      height: 1.1rem;
+      margin-right: 0.35rem;
+      position: relative;
+      top: 0.1875rem;
+      width: 1.1rem;
+    }
+  }
+
+  ///////////
+  // FILLS //
+  ///////////
+  &--solid,
+  &--hollow {
+
+    // States
+    &[disabled] {
+      &:active {
+        transform: none !important;
+      }
+    }
+  }
+}
+
+///////////////////////
+// COMPONENT STYLING //
+///////////////////////
+.action-row {
+
+  // Media Queries
+  @media (min-width: $bp-lap) {
+    display: flex;
+    // flex-direction: row-reverse;
+  }
+
+  .button {
+
+    // Makes the rightmost button flush with its container. First is last when the direction has been reversed.
+    &:first-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+
+  /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+@mixin color-modifiers($attribute: 'background-color', $prefix: '-', $separator: '-', $base: 'base') {
+  @each $name, $color in $colors {
+    &#{$prefix}#{$name} {
+      @each $tone, $hex in $color {
+        &#{if($tone != $base, #{$separator}#{$tone}, '')} {
+          #{$attribute}: $hex;
+          border-color: $hex;
+          border: 0;
+          border-radius: 0.2rem;
+          outline: 0;
+          font-size: 100%;
+          padding: 12px 30px;
+          box-shadow: 0 2px 2px 0 rgba($hex, 0.14), 0 3px 1px -2px rgba($hex, 0.2), 0 1px 5px 0 rgba($hex, 0.12);
+
+          @if ($name=='primary') {
+            color: #231c13;
+          }
+
+          @else {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  @include color-modifiers;
+}
