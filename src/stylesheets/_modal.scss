@@ -1,0 +1,91 @@
+// Breakpoints:/* Breakpoint sizes */
+$screen-xs-min: 320px;
+$screen-sm-min: 544px;
+$screen-md-min: 768px;
+$screen-lg-min: 1024px;
+
+/* Create the mixin (usually in a separate .scss file) */
+@mixin breakpoint($media) {
+  @if $media == xs {
+    @media only screen and (min-width: $screen-xs-min) { @content; }
+  }
+
+  @else if $media == sm {
+    @media only screen and (min-width: $screen-sm-min) { @content; }
+  }
+
+  @else if $media == md {
+    @media only screen and (min-width: $screen-md-min) { @content; }
+  }
+
+  @else if $media == lg {
+    @media only screen and (min-width: $screen-lg-min) { @content; }
+  }
+}
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(34, 59, 83, 0.85);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  color: $black;
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  & > .modal-content {
+    width: auto;
+    height: auto;
+
+    @include breakpoint(xs) {
+      position: absolute;
+      height: calc(100% - 7rem);
+      margin: 1.5rem;
+      padding: 2em;
+      border-radius: 0.3rem;
+      background: $white;
+    }
+
+    @include breakpoint(sm) {
+      position: absolute;
+      height: unset;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 2em;
+      border-radius: 0.3rem;
+      background: $white;
+    }
+  }
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  text-align: center;
+  top: 0;
+  text-decoration: none;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
