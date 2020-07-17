@@ -391,7 +391,7 @@ $button-border-width-thick: 3px;
   ///////////
   &--small {
     min-width: 6rem;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     font-size: 0.8em;
     min-height: 2rem;
   }
@@ -417,7 +417,7 @@ $button-border-width-thick: 3px;
 
   &--medium {
     min-width: 8rem;
-    border-radius: 0.75rem;
+    border-radius: 0.3rem;
     min-height: 2.5rem;
   }
 
@@ -433,7 +433,7 @@ $button-border-width-thick: 3px;
 
   &--large {
     min-width: 10rem;
-    border-radius: 0.75rem;
+    border-radius: 0.3rem;
     font-size: 1.2em;
     letter-spacing: 1px;
     min-height: 3rem;
