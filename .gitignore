@@ -1,6 +1,6 @@
 ## Project
 dist/*
-
+build/*
 ## Node.js
 lib-cov
 *.seed

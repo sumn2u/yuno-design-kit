@@ -7,7 +7,13 @@
 * Homepage: [https://sumn2u.github.io/yuno-design-kit/](https://sumn2u.github.io/yuno-design-kit/)
 
 ![Yuno Design Kit](./images/yuno-design-kit.png)
+
 ## Installation
+```html
+<link rel="stylesheet" href="https://unpkg.com/yuno-design-kit@1.1.6/build/style.1.1.6.css">
+<script src="https://unpkg.com/yuno-design-kit@1.1.6/build/main.1.1.6.js"></script>
+```
+
 
 ## Development
 
