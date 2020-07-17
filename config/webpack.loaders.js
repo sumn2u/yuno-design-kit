@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./site.config');
-
+const configuration = require('../package.json');
 // Define common loader constants
 const sourceMap = config.env !== 'production';
 
@@ -131,7 +131,7 @@ const fonts = {
     {
       loader: 'file-loader',
       query: {
-        name: '[name].[hash].[ext]',
+        name: config.export === "package" ? '[name].[ext]' : '[name].[hash].[ext]',
         outputPath: 'fonts/',
       },
     },

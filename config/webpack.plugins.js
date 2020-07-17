@@ -13,7 +13,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
-
+const configuration = require('../package.json');
 const config = require('./site.config');
 
 // Hot module replacement
@@ -50,14 +50,13 @@ const stylelint = new StyleLintPlugin();
 
 // Extract CSS
 const cssExtract = new MiniCssExtractPlugin({
-  filename: 'style.[contenthash].css',
+  filename: config.export === "package" ? `style.${configuration.version}.css` : 'style.[contenthash].css',
 });
 
 // HTML generation
 const paths = [];
 const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map((dir) => {
   const filename = path.basename(dir);
-
   if (filename !== '404.html') {
     paths.push(filename);
   }
@@ -129,7 +128,7 @@ const google = new GoogleAnalyticsPlugin({
   id: config.googleAnalyticsUA,
 });
 
-module.exports = [
+ const plugins = [
   clean,
   stylelint,
   cssExtract,
@@ -142,3 +141,9 @@ module.exports = [
   webpackBar,
   config.env === 'development' && hmr,
 ].filter(Boolean);
+
+ const buildPlugins = [clean, stylelint, cssExtract].filter(Boolean);
+
+ 
+module.exports.plugins = plugins;
+module.exports.buildPlugins = buildPlugins;

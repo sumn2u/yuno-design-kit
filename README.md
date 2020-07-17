@@ -6,8 +6,10 @@
 
 * Homepage: [https://sumn2u.github.io/yuno-design-kit/](https://sumn2u.github.io/yuno-design-kit/)
 
-
+![Yuno Design Kit](./images/yuno-design-kit.png)
 ## Installation
+
+## Development
 
 ```bash
 git clone https://github.com/sumn2u/yuno-design-kit.git

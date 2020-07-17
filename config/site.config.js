@@ -34,11 +34,12 @@ const config = {
 
   // Advanced configuration, edit with caution!
   env: process.env.NODE_ENV,
+  export: process.env.NODE_EXPORT,
   root: ROOT,
   paths: {
     config: 'config',
     src: 'src',
-    dist: 'dist',
+    dist: process.env.NODE_EXPORT  === 'package' ? 'build': 'dist',
   },
   package: JSON.parse(
     fs.readFileSync(path.join(ROOT, '/package.json'), { encoding: 'utf-8' }),

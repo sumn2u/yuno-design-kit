@@ -34,8 +34,9 @@
     "lint:js": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "build:dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
+    "build:prod-dist": "cross-env NODE_ENV=production cross-env NODE_EXPORT=package webpack --config ./config/webpack-prod.config.js",
     "deploy-netlify": "node ./config/site.deploy.js",
-    "deploy": "gh-pages -d dist"
+    "deploy": "yarn run build:dist && gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
