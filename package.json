@@ -36,7 +36,8 @@
     "build:dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
     "build:prod-dist": "cross-env NODE_ENV=production cross-env NODE_EXPORT=package webpack --config ./config/webpack-prod.config.js",
     "deploy-netlify": "node ./config/site.deploy.js",
-    "deploy": "yarn run build:dist && gh-pages -d dist"
+    "deploy": "yarn run build:dist && gh-pages -d dist",
+    "release": "release-it"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -66,6 +67,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "postcss-sass": "^0.4.1",
+    "release-it": "^13.6.5",
     "robotstxt-webpack-plugin": "^6.0.0",
     "sass-loader": "^7.2.0",
     "sitemap-webpack-plugin": "^0.6.0",
@@ -80,7 +82,9 @@
     "webpack-merge": "^4.2.1",
     "webpackbar": "^4.0.0"
   },
-  "files":["build"],
+  "files": [
+    "build"
+  ],
   "dependencies": {
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
