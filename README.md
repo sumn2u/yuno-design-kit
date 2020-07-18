@@ -6,6 +6,9 @@ A Badass Design Kit inspired by Yuno Design.
 [![GitHub license](https://img.shields.io/github/license/sumn2u/yuno-design-kit)](https://github.com/sumn2u/yuno-design-kit/blob/master/LICENSE)
  [![Twitter](https://img.shields.io/twitter/url/https/github.com/sumn2u/yuno-design-kit.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsumn2u%2Fyuno-design-kit)
 [![GitHub tag](https://img.shields.io/github/tag/sumn2u/yuno-design-kit.svg)](https://GitHub.com/sumn2u/yuno-design-kit/tags/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+[![Build Status](https://travis-ci.org/sumn2u/yuno-design-kit.svg?branch=master)](https://travis-ci.org/sumn2u/yuno-design-kit)
 [![GitHub release](https://img.shields.io/github/release/sumn2u/yuno-design-kit.svg)](https://GitHub.com/sumn2u/yuno-design-kit/releases/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/sumn2u/yuno-design-kit/graphs/commit-activity)
 <a href="https://npmjs.com/package/money-cli"><img src="https://img.shields.io/npm/dt/yuno-design-kit.svg" alt="npm Downloads"></a> 
