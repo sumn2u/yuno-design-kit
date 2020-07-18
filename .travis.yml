@@ -10,7 +10,7 @@ install:
 script:
   - npm run lint:styles
   - npm run lint:js
-  - npm run deploy
+  - npm run build:dist
 
 dist: trusty
 sudo: false

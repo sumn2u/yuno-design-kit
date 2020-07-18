@@ -1,5 +1,14 @@
 # Yuno Design Kit &nbsp;
+A Badass Design Kit inspired by Yuno Design.
 
+[![GitHub issues](https://img.shields.io/github/issues/sumn2u/yuno-design-kit)](https://github.com/sumn2u/yuno-design-kit/issues) [![GitHub forks](https://img.shields.io/github/forks/sumn2u/yuno-design-kit)](https://github.com/sumn2u/yuno-design-kit/network)
+[![GitHub stars](https://img.shields.io/github/stars/sumn2u/yuno-design-kit)](https://github.com/sumn2u/yuno-design-kit/stargazers)
+[![GitHub license](https://img.shields.io/github/license/sumn2u/yuno-design-kit)](https://github.com/sumn2u/yuno-design-kit/blob/master/LICENSE)
+ [![Twitter](https://img.shields.io/twitter/url/https/github.com/sumn2u/yuno-design-kit.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fsumn2u%2Fyuno-design-kit)
+[![GitHub tag](https://img.shields.io/github/tag/sumn2u/yuno-design-kit.svg)](https://GitHub.com/sumn2u/yuno-design-kit/tags/)
+[![GitHub release](https://img.shields.io/github/release/sumn2u/yuno-design-kit.svg)](https://GitHub.com/sumn2u/yuno-design-kit/releases/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/sumn2u/yuno-design-kit/graphs/commit-activity)
+<a href="https://npmjs.com/package/money-cli"><img src="https://img.shields.io/npm/dt/yuno-design-kit.svg" alt="npm Downloads"></a> 
 
 **Discuss it on [Product Hunt](https://www.producthunt.com/posts/yuno-design-kit) 🦄**
 
