@@ -4,7 +4,7 @@ const fs = require('fs');
 let ROOT = process.env.PWD;
 
 if (!ROOT) {
-  ROOT = process.cwd();
+  ROOT = __dirname;
 }
 
 const config = {

@@ -102,5 +102,5 @@ async function runSetup() {
 };
 
 if (!skip_setup) {
-  runSetup();
+  // runSetup();
 }
