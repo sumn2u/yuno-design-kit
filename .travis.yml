@@ -4,12 +4,17 @@ node_js:
   - lts/*
 
 install:
-  - SKIP_SETUP=true npm install
+  - SKIP_SETUP=true yarn install
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
 
 script:
-  - npm run lint:styles
-  - npm run lint:js
-  - npm run build:dist
+  - yarn run lint:styles
+  - yarn run lint:js
+  - yarn run build:dist
 
 dist: trusty
 sudo: false
