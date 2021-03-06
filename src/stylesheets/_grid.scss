@@ -57,6 +57,22 @@ $lg: 75rem;
   align-items: end;
 }
 
+.text {
+  text-align: initial;
+
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: center;
+  }
+}
+
 @for $i from 1 through $grid-columns {
   .column-xs-#{$i} {
     -ms-flex-preferred-size: $i / $grid-columns * 100%;
