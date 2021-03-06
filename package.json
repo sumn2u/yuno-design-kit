@@ -38,7 +38,9 @@
     "deploy-netlify": "node ./config/site.deploy.js",
     "deploy": "yarn run build:dist && gh-pages -d dist",
     "release": "release-it",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -97,12 +99,16 @@
     "normalize.css": "^8.0.1",
     "reset-css": "^4.0.1",
     "sanitize.css": "^11.0.0",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "snyk": "^1.473.0"
   },
-  "publishConfig": { "registry": "https://registry.npmjs.org/" },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "snyk": true
 }
