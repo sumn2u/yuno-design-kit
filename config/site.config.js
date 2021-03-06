@@ -41,9 +41,7 @@ const config = {
     src: 'src',
     dist: process.env.NODE_EXPORT  === 'package' ? 'build': 'dist',
   },
-  package: JSON.parse(
-    fs.readFileSync(path.join(ROOT, '/package.json'), { encoding: 'utf-8' }),
-  ),
+  package: undefined, 
 };
 
 module.exports = config;

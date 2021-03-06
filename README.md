@@ -11,7 +11,7 @@ A Badass Design Kit inspired by Yuno Design.
 [![Build Status](https://travis-ci.org/sumn2u/yuno-design-kit.svg?branch=master)](https://travis-ci.org/sumn2u/yuno-design-kit)
 [![GitHub release](https://img.shields.io/github/release/sumn2u/yuno-design-kit.svg)](https://GitHub.com/sumn2u/yuno-design-kit/releases/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/sumn2u/yuno-design-kit/graphs/commit-activity)
-<a href="https://npmjs.com/package/money-cli"><img src="https://img.shields.io/npm/dt/yuno-design-kit.svg" alt="npm Downloads"></a> 
+<a href="https://npmjs.com/package/yuno-design-kit"><img src="https://img.shields.io/npm/dt/yuno-design-kit.svg" alt="npm Downloads"></a> 
 
 **Discuss it on [Product Hunt](https://www.producthunt.com/posts/yuno-design-kit) 🦄**
 
