@@ -97,7 +97,7 @@
     "normalize.css": "^8.0.1",
     "reset-css": "^4.0.1",
     "sanitize.css": "^11.0.0",
-    "webpack-dev-server": "^4.7.3"
+    "webpack-dev-server": "^4.8.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
